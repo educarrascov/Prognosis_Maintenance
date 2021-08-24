@@ -1,4 +1,4 @@
-<p style='text-align: right;'>
+<p style='text-align: justify;'>
 
 # Data Science: Herramientas de Machine Learning para implementar mantenimiento preventivo en una planta de propulsión naval.
 
@@ -8,12 +8,15 @@ Enlace a la publicación del documento en [Revista de Marina](https://revistamar
 
 Enlace al PDF de la [Publicación.](https://github.com/educarrascov/Prognosis_Maintenance/blob/main/PDF/2.%20Data%20Science%2C%20Mantenimiento%20predictivo.pdf)
 ____
+<p style='text-align: justify;'>  
 _**Resumen:**
 El Data Science (Ciencia de datos), forma parte fundamental hoy en día en el análisis, control estadístico y en la aplicación de la industria 4.0. Es así como, la investigación realizada consistió en implementar un analizador de bases de datos en tiempo real que permitiera utilizar los datos capturados por diversos sensores en un sistema de propulsión. A partir de lo anterior y aplicando algoritmos de Machine Learning como una herramienta de esta ciencia, se contribuyó a la implementación del mantenimiento predictivo que permite por un lado, determinar cuando es necesario realizar las tareas de mantenimiento y por otro, reducir costos al detectar potenciales fallas de manera temprana, preveniendo su ocurrencia._
 
 **Palabras Claves:
 Data Science, Machine Learning, Turbina a Gas, Mantenimiento Predictivo.**
 __
+
+<p style='text-align: justify;'>
 ## Mantenimiento:
 De acuerdo con la British Standard 3811:1974 , el mantenimiento involucra a todas las acciones necesarias para mantener o recuperar un sistema, equipo o componente a un estándar aceptable en el cual pueda cumplir las funciones para el cual fue concebido.
 A lo largo del tiempo, desde la revolución industrial en el siglo XIX, la forma más simple de mantenimiento fue reparar o reemplazar el equipo cuando se tenía un problema, actividad que en su mayoría era realizada por los propios operarios. Pero, la industrialización y el avance tecnológico crearon máquinas más complejas debiendo contar con personal especializado para su reparación, creando los primeros departamentos de mantenimiento centrados principalmente en solucionar fallas que se presentaran con acciones básicamente correctivas, definiéndose con ello el Mantenimiento Correctivo.
