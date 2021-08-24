@@ -1,4 +1,4 @@
-<p style='text-align: justify;'> Your Text </p>
+<p style='text-align: right;'>
 
 # Data Science: Herramientas de Machine Learning para implementar mantenimiento preventivo en una planta de propulsión naval.
 
