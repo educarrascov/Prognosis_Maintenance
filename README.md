@@ -1,4 +1,4 @@
-<p style='text-align: justify;'>
+<div style="text-align: right">  
 
 # Data Science: Herramientas de Machine Learning para implementar mantenimiento preventivo en una planta de propulsión naval.
 
@@ -124,3 +124,5 @@ Finalmente, cabe destacar que la transformación digital es entendida como la in
 8. Fernández J. (2009) Ciclo Brayton -Turbinas a Gas. Universidad Tecnológica Nacional. Editorial: UTN; Mendoza, Argentina.
 9. Hederra F. (2018) Información mediante Network Centric Warfare en la Armada, ¿Cómo y Cuándo?. Revista de Marina Nº 967, pp. 24-30. ISSN 0034-8511.
 10. MATLAB (2018) Statistics and Machine Learning Toolbox - White Paper. The MathWorks Inc.
+
+</div>
