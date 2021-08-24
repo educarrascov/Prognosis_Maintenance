@@ -1,4 +1,4 @@
-<div style="text-align: justify">  
+<div style="text-align: justify"> 
 
 # Data Science: Herramientas de Machine Learning para implementar mantenimiento preventivo en una planta de propulsión naval.
 
@@ -6,15 +6,16 @@
 
 Enlace a la publicación del documento en [Revista de Marina](https://revistamarina.cl/es/articulo/data-science-herramientas-de-machine-learning-para-implementar-mantenimiento-predictivo-en-una-planta-propulsora) Año CXXXV, Volumen 137, Número 974.   
 
-Enlace al PDF de la [Publicación.](https://github.com/educarrascov/Prognosis_Maintenance/blob/main/PDF/2.%20Data%20Science%2C%20Mantenimiento%20predictivo.pdf)
-____
+Enlace al PDF de la [Publicación.](https://github.com/educarrascov/Prognosis_Maintenance/blob/main/PDF/2.%20Data%20Science%2C%20Mantenimiento%20predictivo.pdf)  
+
+
   
 _**Resumen:**
 El Data Science (Ciencia de datos), forma parte fundamental hoy en día en el análisis, control estadístico y en la aplicación de la industria 4.0. Es así como, la investigación realizada consistió en implementar un analizador de bases de datos en tiempo real que permitiera utilizar los datos capturados por diversos sensores en un sistema de propulsión. A partir de lo anterior y aplicando algoritmos de Machine Learning como una herramienta de esta ciencia, se contribuyó a la implementación del mantenimiento predictivo que permite por un lado, determinar cuando es necesario realizar las tareas de mantenimiento y por otro, reducir costos al detectar potenciales fallas de manera temprana, preveniendo su ocurrencia._
 
 **Palabras Claves:
 Data Science, Machine Learning, Turbina a Gas, Mantenimiento Predictivo.**
-__
+
 
 ## Mantenimiento:
 De acuerdo con la British Standard 3811:1974 , el mantenimiento involucra a todas las acciones necesarias para mantener o recuperar un sistema, equipo o componente a un estándar aceptable en el cual pueda cumplir las funciones para el cual fue concebido.
