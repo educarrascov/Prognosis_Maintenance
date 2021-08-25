@@ -25,8 +25,9 @@ En línea con lo anterior, fueron la aviación y la industria naval, los primero
 La creación de mejores ingenieros de diseño, derivó en un mejor análisis de las fallas, tanto de las que han ocurrido en base al registro de la información, como de las potenciales por ocurrir; por lo cual, ya en la década de los 70’ se desarrolló el Mantenimiento Basado en la Confiabilidad (RCM ), como un estilo de gestión, basado en el estudio acabado de los equipos, análisis de los modos de falla y en la aplicación de técnicas de estadística, que permitieran perfeccionar los planes de mantenimiento.
 A lo largo del tiempo y con la implementación de nuevas herramientas computacionales que permitieron desarrollar de mejor manera la gestión de las actividades de mantenimiento, se cambió el enfoque desde una perspectiva reactiva hacia una perspectiva proactiva, pasando desde un foco centrado en acciones de reemplazo o reparación, hacia actividades predictivas, utilizando la trazabilidad de la información disponible como una herramienta de asesoramiento en tiempo real para apoyar en la toma de decisiones, desarrollando con ello el Mantenimiento Predictivo en base a datos.
 
-                                 ![Alt text](img/fig1.png?raw=true "Title")
-                                  Figura Nº 1: Tipologías de Mantenimiento.
+<img src="texto/Fig 1.png" align="center" width = "500px"/>
+ 
+Figura Nº 1: Tipologías de Mantenimiento.
                                   
 Este enfoque de mantenimiento, más dinámico, plantea una forma de supervisión que permite predecir potenciales degradaciones en el sistema y con ello planificar el momento en el cual es necesario realizar una actividad de mantenimiento, posibilitando además programar y minimizar las interrupciones. Además, disminuir el alto costo de realizar actividades de mantenimiento correctivo y prevenir la indisponibilidad del sistema que trae consigo el aplicar tal tarea.
 Actualmente, para su aplicación, existen diversos software que permiten analizar grandes cantidades de datos (Big Data) y de manera particular en la Armada de Chile, existen potenciales herramientas que permitirían generar bases datos como son: el IPMS como un software de monitoreo de la condición de la maquinaria en un OPV capturando a través de sensores los diferentes estados del sistema de propulsión o también el MCAS, como monitoreo de la condición de la maquinaria en una FF Tipo 23; ambos sistemas permiten capturar información a través de sensores y efectuando una modificación computacional, permitirían almacenar los datos necesarios para implementar esta tipología de mantenimiento.
@@ -35,40 +36,74 @@ Actualmente, para su aplicación, existen diversos software que permiten analiza
 Como se mencionó anteriormente, el gran volumen de datos (Big Data) generados por el almacenamiento de la información proveniente de sensores, produce un problema generalizado en su procesamiento. En respuesta a esto, el Data Science  cuenta con una herramienta que permite simplificar esta operación y realizar un análisis en tiempo real de la misma, generando sus propios algoritmos, este instrumento se llama Machine Learning.
 El Machine Learning, es un mecanismo que permite a los computadores aprender a hacer lo que para nosotros resulta natural: aprender de la experiencia. Este mecanismo, utiliza algoritmos (a través de métodos computacionales), para obtener información analizando datos, sin la necesidad de contar con una determinada ecuación como modelo, es decir, los datos se procesan en una caja negra (Blackbox) que convierte un estímulo (datos de entrada), en una respuesta (datos procesados).
 
-                              Figura Nº 2: Diagrama lógico del Machine Learning.
+<img src="texto/Fig 2.png" align="center" width = "350px"/>
+ 
+Figura Nº 2: Diagrama lógico del Machine Learning.
 
 El Machine Learning se presenta como una ayuda esencial para el mantenimiento predictivo, permitiendo la recolección, limpieza, procesamiento y análisis a través de dos tipos de técnicas: la primera es aprendizaje supervisado, que entrena a un modelo de variables de entrada y salida conocidos que permitan predecir futuras salidas y, el segundo, es aprendizaje no supervisado que busca patrones de reconocimiento de estructuras sólo basada en los datos de entrada.
 
-                                   Figura Nº 3: Técnicas de Machine Learning.
+<img src="texto/Fig 3.png" align="center" width = "500px"/>
+ 
+Figura Nº 3: Técnicas de Machine Learning.
 
 A partir de lo anterior, para aplicar el Machine Learning en la resolución de un problema de datos, se plantea un flujo de trabajo basado en 6 pasos: 
 
-                                    Figura Nº 4: Flujo de Trabajo.
+<img src="texto/Fig 4.png" align="center" width = "500px"/>
+  
+Figura Nº 4: Flujo de Trabajo.
                                   
 1. Adquisición y Carga de los datos: Es el proceso de captura a través de sensores de los datos de operación de un sistema y su almacenamiento en distintos Data-Set como información estructurada SQL  y procesable.
 Preprocesamiento de los datos: Obteniendo características e identificando valores atípicos (Outliers) que se encuentren por fuera del resto de los datos y con ello decidir cuales son relevantes para la resolución del problema. Parte del preprocesamiento de los datos, es dividir los datos en dos partes. Una base de datos que se utilizará para entrenamiento (Train Set) y la otra base de datos se utilizará para verificar el adecuado ajuste del algoritmo (Test Set) , esto permitirá utilizar datos que no fueron incluidos en el modelo procesado y con ello reconocer como reacciona el algoritmo ante datos desconocidos.
 
 2. Obtención de Características: Obtener características de los datos procesados es la actividad más importante del flujo de trabajo, lo cual también es conocido como ingeniería de datos, ésta permite transformar data cruda en información que puede ser utilizada en un algoritmo de Machine Learning.
+
 3. Construir y entrenar el modelo: Cuando se construye un modelo, es recomendable comenzar por un algoritmo simple debido a que será más rápida su obtención e interpretación. Un ejemplo de esto es, si se utiliza en un modelo con etiquetas (modelo de clasificación) como: "standing", "sitting", "walking", "running", "dancing" (pararse, sentarse, caminar, correr y bailar); para conocer como se ajusta a las variables de respuesta, se puede realizar una matriz de confusión que permite comparar las clasificaciones realizadas por el modelo con las creadas de manera particular, de manera de obtener su ajuste, como se muestra a continuación:
-                                      
-                                                        Figura Nº 5: Matriz de Confusión.
+
+<img src="texto/Fig 5.png" align="center" width = "500px"/>
+   
+Figura Nº 5: Matriz de Confusión.
                                       
 Cada punto de la matriz simboliza que el algoritmo de clasificación al ingresar variables desde sensores que tengan características de "sitting", tenga un 99% de probabilidad de clasificarse en dicha etiqueta, en tanto que, al ingresar un estímulo que tenga las características de "dancing", sólo exista un 59% de probabilidad de ser clasificado en esa categoría; lo anterior, permite comparar el nivel de eficiencia de los distintos modelos a través de su matriz.
+
 4. Realizar iteraciones para encontrar el mejor modelo: Del análisis obtenido de la matriz de confusión, se puede obtener la real efectividad del modelo utilizado, esto se logra comparando los resultados con las matrices obtenidas por otros modelos.
+
 5. Integrar el mejor modelo en un sistema de producción: Se debe generar una herramienta que permita al usuario, obtener conclusiones y ayudar en la toma de decisiones. Este tipo de plataforma puede ser representada en un dashboard o una interfaz adecuada para cada nivel técnico del operador, ya sea en una aplicación a través de smartphone o en un panel de operación del sistema de monitoreo en tiempo real.
+
 6. Por último, cabe destacar que dentro de las técnicas de aprendizaje supervisado, existen modelos de clasificación (respuestas discretas) y modelos de regresión (respuestas continuas), de lo cual se puede especificar lo siguiente: si la data posee etiquetas, categorizaciones o puede ser separada en grupos específicos, se deben utilizar algoritmos de Clasificación; por otra parte, si se trabaja con un rango de datos, si la naturaleza de la respuesta es un número real como la temperatura de operación o el tiempo hasta que se produzca una falla, se deben utilizar algoritmos de Regresión.
 
 ## Aplicación de Machine Learning en una Turbina GE LM2500:
 
 Se ha seleccionado para su análisis una planta propulsora caracterizada como una combinación de dos motor diésel eléctricos Siemens (4,5 MW cada uno) con una turbina a gas General Electric LM2500 (20MW) lo que se traduce en una propulsión CODLAG tal como se utiliza en las fragatas F-125 de la Deutsche Marine. El componente principal a analizar en esta investigación, es la turbina que mecánicamente maneja las dos hélices de paso controlable (CPP) por intermedio de una caja de engranaje de conexión cruzada.
   
-                                          Figura Nº 6: Diagrama componentes principales propulsión CODLAG.
+<img src="texto/Fig 6.png" align="center" width = "500px"/>
+ 
+Figura Nº 6: Diagrama componentes principales propulsión CODLAG.
                     
 Esta máquina térmica rotativa de combustión interna utiliza como medio de trabajo el gas y tiene un ciclo termodinámico completo que incluye un fluido de entrada como aire y un fluido de egreso como gas derivado de la combustión, convirtiendo la energía calórica contenida en el combustible, en trabajo mecánico rotacional a través de su eje.
 Lo anterior, es controlado en modo local a través del telégrafo (Telegraph o Lever) que de acuerdo a una posición determinada, genera la demanda de velocidad requerida para gobernar el buque.
 A continuación, se muestra un resumen de los parámetros involucrados en el proceso de utilización de una turbina a gas, estos consistentes en 16 datos de acuerdo al siguiente detalle:
 
-                                                  Figura Nº 7: Resumen de parámetros de funcionamiento.
+
+| Nº | Variable                             | Simbolo | Unidad |
+| ---| ------------------------------------ |----     | ------ |
+| 1  | Lever Position                       | lp      | (.)    |
+| 2  | Ship Speed                           | v       | Knot   |
+| 3  | Gas Turbine Shaft Torque             | GTt     | KN m   |
+| 4  | Gas Turbine Rate of Revolution       | GTn     | r/min  |
+| 5  | Gas Generator Rate of Revolution     | GGn     | r/min  |
+| 6  | Starboard Propeller Torque           | Ts      | kN     |
+| 7  | Port Propeller Torque                | Tp      | kN     |
+| 8  | HP Turbine Exit Temperature          | T48     | ºC     |
+| 9  | GT Compressor Inlet Air Temperature  | T1      | ºC     | 
+| 10 | GT Compressor Outlet Air Temperature | T2      | ºC     |
+| 11 | HP Turbine Exit Pressure             | P48     | bar    |
+| 12 | GT Compressor Inlet Air Temperature  | P1      | bar    |
+| 13 | GT Compressor Outlet Air Pressure    | P2      | bar    |
+| 14 | GT Exhaust Gas Pressure              | Pexh    | bar    |
+| 15 | Turbine Injection Control            | TIC     | %      |
+| 16 | Fuel Flow                            | nf      | kg/s   |
+
+Figura Nº 7: Resumen de parámetros de funcionamiento.
                             
 El sistema de monitoreo de la condición de la maquinaria de la fragata, almacena de manera automática estos parámetros de operación en una base de datos relacional, pero el acceso a los datos de operación de la turbina en la Deutsche Marine se encuentran regulados como información clasificada, por lo cual, se decidió utilizar una base de datos provista por la **University of California Irvine (UCI)** en su repositorio de Machine Learning, la cual contiene una simulación de los 16 parámetros de una turbina de similares características, durante 1 año de operación (11.934 mediciones). 	
 
@@ -79,33 +114,69 @@ De acuerdo a lo descrito anteriormente, utilizando la base de datos del reposito
 ### Modelo de Clasificación:
 Preliminarmente, se deben establecer criterios para crear etiquetas al conjunto de datos (necesarios para un modelo de clasificación), estos se establecieron en base al rango permisible de los respectivos coeficientes de degradación provistos en la base de datos, utilizando las siguientes etiquetas: Operación Normal, Tomar Precaución o Reparación Urgente . Estas etiquetas han sido designadas de manera aleatoria para que el operador del sistema de monitoreo automatizado tenga una alerta del comportamiento de la turbina, con lo cual se obtiene el siguiente detalle:
 
-                                            Figura Nº 8: Resumen de cantidad de etiquetas clasificadas.
+
+| Nº | Etiqueta                             |  Cantidad | 
+| ---| ------------------------------------ |--------   | 
+| 1  | Operación Normal                     |   5049    | 
+| 2  | Tomar Precaución                     |   4590    | 
+| 3  | Reparación Urgente                   |   2295    | 
+|    | Total                                |  11934    | 
+  
+Figura Nº 8: Resumen de cantidad de etiquetas clasificadas.
 
 Objeto observar de mejor manera la real incidencia de la posición del telégrafo en función de las variables anteriormente descritas, se designan colores (Rojo: Reparación Urgente, Verde: Tomar Precaución, Azul: Operación Normal), para representar cada una de las etiquetas en el siguiente gráfico:
 
-                                          Figura Nº 9: Comparación de Variables en función del telégrafo.
+<img src="texto/Fig 9.png" align="center" width = "600px"/>
+ 
+Figura Nº 9: Comparación de Variables en función del telégrafo.
 
 De acuerdo con lo anterior, podemos determinar que los parámetros de temperatura de salida de la turbina (HP Turbine Exit Temperature) y temperatura de salida del compresor (GT compressor outlet air temperature), tienen mayor incidencia en la pérdida de eficiencia.
 De igual manera, se realizó una matriz de correlación para determinar el nivel de relación de cada variable y de cuales variables no tenían mayor incidencia en la resolución del problema.
 
-                                              Figura Nº 10: Matriz de correlación de las 16 variables.
+<img src="texto/Fig 10.png" align="center" width = "600px"/>
+ 
+Figura Nº 10: Matriz de correlación de las 16 variables.
 
 Como se observa en la matriz de correlación, los parámetros de presión y temperatura de entrada (inlet air, inlet pressure) son siempre 1 Bar y 15 ºC (simulación), por lo cual no tienen un nivel de significancia para la resolución del problema y pueden ser descartados de la simulación.
 Realizado el análisis preliminar, se efectúa una partición de la totalidad de los datos en 2 grandes grupos. El primero de ellos (Training Set) correspondiente al 80% para efectuar el entrenamiento de la base de datos y el 20% restante (Test Set), se utilizará como variable de comprobación del algoritmo seleccionado como modelo de predicción, quedando en los siguientes resultados:
 
-                                            Figura Nº 11: Resumen de cantidad de etiquetas clasificadas.
+  
+|    | Trainning Set (80%)                  |  Cantidad |   Total  | 
+| ---| ------------------------------------ |---------- | -------- |
+| 1  | Operación Normal                     |   3997    | 
+| 2  | Tomar Precaución                     |   3682    |   9547   |
+| 3  | Reparación Urgente                   |   1868    | 
+
+|    | Test Set (20%)                       |  Cantidad |   Total  |
+| ---| ------------------------------------ |---------- | -------- |
+| 1  | Operación Normal                     |   1052    |  
+| 2  | Tomar Precaución                     |   908     |   2387   |
+| 3  | Reparación Urgente                   |   427     |
+|    | Total                                |  11934    |  11934   |
+  
+Figura Nº 11: Resumen de cantidad de etiquetas clasificadas.
 
 Definido lo anterior y establecidos los grupos aleatorios, se realizó la simulación del grupo de entrenamiento (Training Set) utilizando las 16 variables continuas,  considerando como respuesta la variable discreta equivalente a la etiqueta de clasificación (Operación Normal, Tomar Precaución, Reparación Urgente), de acuerdo al siguiente resultado:
 
 #### K-Nearest Neighbor (KNN): 
 Se utilizó un modelo de KNN Weighted obteniendo un porcentaje de 94,8% de eficiencia, con la siguiente matriz de confusión:
 
-                                                   Figura 12: Matriz de Confusión KNN Weighted.
+<img src="texto/Fig 12.png" align="center" width = "400px"/>
+ 
+Figura 12: Matriz de Confusión KNN Weighted.
 
 A partir de los datos expuestos y considerando los grados de respuesta y confiabilidad de los modelos, se decidió elegir como algoritmo de predicción el KNN Weighted para crear la BlackBox. 
 Efectuado lo anterior se realizó lo siguiente: en primer lugar se tiene el detalle del 20% que no se utilizó para crear el algoritmo (Test Set), equivalente a las etiquetas de la figura 15. En segundo lugar, utilizando la BlackBox generada por el algoritmo a través de Matlab, se aplicó una función de predicción a esta base de datos (Test Set) para crear una nueva base de datos llamada Trained Set (detallada en la figura 15). Cabe destacar que esto se realizó para verificar la efectividad del algoritmo utilizando la base de datos desconocida para el modelo que representaría la entrada de nuevos datos derivados de la operación de la turbina a gas para luego, ser comparada con una nueva base de datos (Trained Set) obtenida tras aplicar esta función como datos entrenados, obteniendo los siguientes resultados:
 
-                                               Figura 13: Resumen de resultados tras aplicar el modelo.
+
+| Nº | Etiqueta                             |  Cantidad Test Set | Cantidad Trainning Set | Eficacia |
+| ---| ------------------------------------ |------------------- | ---------------------- | -------- |
+| 1  | Operación Normal                     |   1052             | 1053                   |99,905%   |
+| 2  | Tomar Precaución                     |   908              | 905                    |99,668%   |
+| 3  | Reparación Urgente                   |   427              | 429                    |99,533%   | 
+|    | Total                                |  2387              | 2387                   |99,702%   |
+  
+Figura 13: Resumen de resultados tras aplicar el modelo.
 
 A partir de los resultados expuestos en la figura 15, se puede señalar que si se implementa esta herramienta de predicción a la turbina, al ingresar nueva data al sistema a través de sus sensores de operación, existe un 99,668% de que el sistema de monitoreo encienda una alerta (Tomar Precaución), cuando existan condiciones que disminuyan el nivel de confiabilidad o que demanden tomar precaución del equipo, permitiendo al usuario tomar medidas paleativas para aumentar la eficiencia o prevenir una falla mayor.
 Cabe destacar que el algoritmo aprende de la experiencia, por lo cual, el nivel de eficiencia en su predicción irá en aumento a medida que se ingrese más información al sistema (operando el equipo).
