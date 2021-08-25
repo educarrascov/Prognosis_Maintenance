@@ -25,7 +25,7 @@ En línea con lo anterior, fueron la aviación y la industria naval, los primero
 La creación de mejores ingenieros de diseño, derivó en un mejor análisis de las fallas, tanto de las que han ocurrido en base al registro de la información, como de las potenciales por ocurrir; por lo cual, ya en la década de los 70’ se desarrolló el Mantenimiento Basado en la Confiabilidad (RCM ), como un estilo de gestión, basado en el estudio acabado de los equipos, análisis de los modos de falla y en la aplicación de técnicas de estadística, que permitieran perfeccionar los planes de mantenimiento.
 A lo largo del tiempo y con la implementación de nuevas herramientas computacionales que permitieron desarrollar de mejor manera la gestión de las actividades de mantenimiento, se cambió el enfoque desde una perspectiva reactiva hacia una perspectiva proactiva, pasando desde un foco centrado en acciones de reemplazo o reparación, hacia actividades predictivas, utilizando la trazabilidad de la información disponible como una herramienta de asesoramiento en tiempo real para apoyar en la toma de decisiones, desarrollando con ello el Mantenimiento Predictivo en base a datos.
 
-<img src="texto/Fig 1.png" align="center" width = "600px"/>
+<img src="texto/Fig 1.png" align="center" width = "500px"/>
  
 Figura Nº 1: Tipologías de Mantenimiento.
                                   
@@ -36,19 +36,19 @@ Actualmente, para su aplicación, existen diversos software que permiten analiza
 Como se mencionó anteriormente, el gran volumen de datos (Big Data) generados por el almacenamiento de la información proveniente de sensores, produce un problema generalizado en su procesamiento. En respuesta a esto, el Data Science  cuenta con una herramienta que permite simplificar esta operación y realizar un análisis en tiempo real de la misma, generando sus propios algoritmos, este instrumento se llama Machine Learning.
 El Machine Learning, es un mecanismo que permite a los computadores aprender a hacer lo que para nosotros resulta natural: aprender de la experiencia. Este mecanismo, utiliza algoritmos (a través de métodos computacionales), para obtener información analizando datos, sin la necesidad de contar con una determinada ecuación como modelo, es decir, los datos se procesan en una caja negra (Blackbox) que convierte un estímulo (datos de entrada), en una respuesta (datos procesados).
 
-<img src="texto/Fig 2.png" align="center" width = "600px"/>
+<img src="texto/Fig 2.png" align="center" width = "350px"/>
  
 Figura Nº 2: Diagrama lógico del Machine Learning.
 
 El Machine Learning se presenta como una ayuda esencial para el mantenimiento predictivo, permitiendo la recolección, limpieza, procesamiento y análisis a través de dos tipos de técnicas: la primera es aprendizaje supervisado, que entrena a un modelo de variables de entrada y salida conocidos que permitan predecir futuras salidas y, el segundo, es aprendizaje no supervisado que busca patrones de reconocimiento de estructuras sólo basada en los datos de entrada.
 
-<img src="texto/Fig 3.png" align="center" width = "600px"/>
+<img src="texto/Fig 3.png" align="center" width = "500px"/>
  
 Figura Nº 3: Técnicas de Machine Learning.
 
 A partir de lo anterior, para aplicar el Machine Learning en la resolución de un problema de datos, se plantea un flujo de trabajo basado en 6 pasos: 
 
-<img src="texto/Fig 4.png" align="center" width = "600px"/>
+<img src="texto/Fig 4.png" align="center" width = "500px"/>
   
 Figura Nº 4: Flujo de Trabajo.
                                   
@@ -56,22 +56,26 @@ Figura Nº 4: Flujo de Trabajo.
 Preprocesamiento de los datos: Obteniendo características e identificando valores atípicos (Outliers) que se encuentren por fuera del resto de los datos y con ello decidir cuales son relevantes para la resolución del problema. Parte del preprocesamiento de los datos, es dividir los datos en dos partes. Una base de datos que se utilizará para entrenamiento (Train Set) y la otra base de datos se utilizará para verificar el adecuado ajuste del algoritmo (Test Set) , esto permitirá utilizar datos que no fueron incluidos en el modelo procesado y con ello reconocer como reacciona el algoritmo ante datos desconocidos.
 
 2. Obtención de Características: Obtener características de los datos procesados es la actividad más importante del flujo de trabajo, lo cual también es conocido como ingeniería de datos, ésta permite transformar data cruda en información que puede ser utilizada en un algoritmo de Machine Learning.
+
 3. Construir y entrenar el modelo: Cuando se construye un modelo, es recomendable comenzar por un algoritmo simple debido a que será más rápida su obtención e interpretación. Un ejemplo de esto es, si se utiliza en un modelo con etiquetas (modelo de clasificación) como: "standing", "sitting", "walking", "running", "dancing" (pararse, sentarse, caminar, correr y bailar); para conocer como se ajusta a las variables de respuesta, se puede realizar una matriz de confusión que permite comparar las clasificaciones realizadas por el modelo con las creadas de manera particular, de manera de obtener su ajuste, como se muestra a continuación:
 
-<img src="texto/Fig 5.png" align="center" width = "600px"/>
+<img src="texto/Fig 5.png" align="center" width = "500px"/>
    
 Figura Nº 5: Matriz de Confusión.
                                       
 Cada punto de la matriz simboliza que el algoritmo de clasificación al ingresar variables desde sensores que tengan características de "sitting", tenga un 99% de probabilidad de clasificarse en dicha etiqueta, en tanto que, al ingresar un estímulo que tenga las características de "dancing", sólo exista un 59% de probabilidad de ser clasificado en esa categoría; lo anterior, permite comparar el nivel de eficiencia de los distintos modelos a través de su matriz.
+
 4. Realizar iteraciones para encontrar el mejor modelo: Del análisis obtenido de la matriz de confusión, se puede obtener la real efectividad del modelo utilizado, esto se logra comparando los resultados con las matrices obtenidas por otros modelos.
+
 5. Integrar el mejor modelo en un sistema de producción: Se debe generar una herramienta que permita al usuario, obtener conclusiones y ayudar en la toma de decisiones. Este tipo de plataforma puede ser representada en un dashboard o una interfaz adecuada para cada nivel técnico del operador, ya sea en una aplicación a través de smartphone o en un panel de operación del sistema de monitoreo en tiempo real.
+
 6. Por último, cabe destacar que dentro de las técnicas de aprendizaje supervisado, existen modelos de clasificación (respuestas discretas) y modelos de regresión (respuestas continuas), de lo cual se puede especificar lo siguiente: si la data posee etiquetas, categorizaciones o puede ser separada en grupos específicos, se deben utilizar algoritmos de Clasificación; por otra parte, si se trabaja con un rango de datos, si la naturaleza de la respuesta es un número real como la temperatura de operación o el tiempo hasta que se produzca una falla, se deben utilizar algoritmos de Regresión.
 
 ## Aplicación de Machine Learning en una Turbina GE LM2500:
 
 Se ha seleccionado para su análisis una planta propulsora caracterizada como una combinación de dos motor diésel eléctricos Siemens (4,5 MW cada uno) con una turbina a gas General Electric LM2500 (20MW) lo que se traduce en una propulsión CODLAG tal como se utiliza en las fragatas F-125 de la Deutsche Marine. El componente principal a analizar en esta investigación, es la turbina que mecánicamente maneja las dos hélices de paso controlable (CPP) por intermedio de una caja de engranaje de conexión cruzada.
   
-<img src="texto/Fig 6.png" align="center" width = "600px"/>
+<img src="texto/Fig 6.png" align="center" width = "500px"/>
  
 Figura Nº 6: Diagrama componentes principales propulsión CODLAG.
                     
@@ -157,7 +161,7 @@ Definido lo anterior y establecidos los grupos aleatorios, se realizó la simula
 #### K-Nearest Neighbor (KNN): 
 Se utilizó un modelo de KNN Weighted obteniendo un porcentaje de 94,8% de eficiencia, con la siguiente matriz de confusión:
 
-<img src="texto/Fig 12.png" align="center" width = "600px"/>
+<img src="texto/Fig 12.png" align="center" width = "400px"/>
  
 Figura 12: Matriz de Confusión KNN Weighted.
 
@@ -171,6 +175,7 @@ Efectuado lo anterior se realizó lo siguiente: en primer lugar se tiene el deta
 | 2  | Tomar Precaución                     |   908              | 905                    |99,668%   |
 | 3  | Reparación Urgente                   |   427              | 429                    |99,533%   | 
 |    | Total                                |  2387              | 2387                   |99,702%   |
+  
 Figura 13: Resumen de resultados tras aplicar el modelo.
 
 A partir de los resultados expuestos en la figura 15, se puede señalar que si se implementa esta herramienta de predicción a la turbina, al ingresar nueva data al sistema a través de sus sensores de operación, existe un 99,668% de que el sistema de monitoreo encienda una alerta (Tomar Precaución), cuando existan condiciones que disminuyan el nivel de confiabilidad o que demanden tomar precaución del equipo, permitiendo al usuario tomar medidas paleativas para aumentar la eficiencia o prevenir una falla mayor.
