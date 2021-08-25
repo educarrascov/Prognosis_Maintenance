@@ -173,7 +173,7 @@ Efectuado lo anterior se realizó lo siguiente: en primer lugar se tiene el deta
 | ---| ------------------------------------ |------------------- | ---------------------- | -------- |
 | 1  | `Operación Normal`                     |   1052             | 1053                   |99,905%   |
 | 2  | `Tomar Precaución`                     |   908              | 905                    |99,668%   |
-| 3  | `Reparación Urgente                   |   427              | 429                    |99,533%   | 
+| 3  | `Reparación Urgente`                   |   427              | 429                    |99,533%   | 
 |    | Total                                |  2387              | 2387                   |99,702%   |
   
 Figura 13: Resumen de resultados tras aplicar el modelo.
