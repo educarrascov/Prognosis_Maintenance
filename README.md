@@ -109,7 +109,7 @@ El sistema de monitoreo de la condición de la maquinaria de la fragata, almacen
 
 Además, esta base de datos incluye dos variables adicionales: **Compressor Degradation Coefficient** (`〖kM〗_C`) y **Gas Turbine Degradation Coefficient** (`〖kM〗_t`), ambos representan la degradación sobre las horas de servicio remanentes de ambos componentes. En resumen, se tiene una base de datos de _18 variables_, consistente en **16 variables simuladas** (_datos de operación_), más **2 variables calculadas** (_coeficientes de degradación_).
 
-De acuerdo a lo descrito anteriormente, utilizando la base de datos del repositorio (UCI) y aplicando el flujo de trabajo descrito en la presente investigación, se aplicaron herramientas de Data Science con técnica de Aprendizaje Supervisado (respuesta conocida) en un modelo de clasificación, para crear un sistema de análisis de la turbina a gas que permitiera monitorear en tiempo real sus horas de servicio remanentes de acuerdo a un determinado nivel de confiabilidad.
+De acuerdo a lo descrito anteriormente, utilizando la base de datos del repositorio (UCI) y aplicando el flujo de trabajo descrito en la presente investigación, se aplicaron herramientas de Data Science con técnica de Aprendizaje Supervisado (respuesta conocida) en un _modelo de clasificación_, para crear un sistema de análisis de la turbina a gas que permitiera monitorear en tiempo real sus horas de servicio remanentes de acuerdo a un determinado nivel de confiabilidad.
 
 ### Modelo de Clasificación:
 Preliminarmente, se deben establecer criterios para crear etiquetas al conjunto de datos (necesarios para un modelo de clasificación), estos se establecieron en base al rango permisible de los respectivos coeficientes de degradación provistos en la base de datos, utilizando las siguientes etiquetas: `Operación Normal`, `Tomar Precaución` o `Reparación Urgente`. Estas etiquetas han sido designadas de manera aleatoria para que el operador del sistema de monitoreo automatizado tenga una alerta del comportamiento de la turbina, con lo cual se obtiene el siguiente detalle:
@@ -117,16 +117,16 @@ Preliminarmente, se deben establecer criterios para crear etiquetas al conjunto 
 
 | Nº | Etiqueta                             |  Cantidad | 
 | ---| ------------------------------------ |--------   | 
-| 1  | `Operación Normal`                     |   5049    | 
-| 2  | `Tomar Precaución`                     |   4590    | 
-| 3  | `Reparación Urgente`                   |   2295    | 
+| 1  | `Operación Normal`                   |   5049    | 
+| 2  | `Tomar Precaución`                   |   4590    | 
+| 3  | `Reparación Urgente`                 |   2295    | 
 |    | Total                                |  11934    | 
   
 Figura Nº 8: Resumen de cantidad de etiquetas clasificadas.
 
-Objeto observar de mejor manera la real incidencia de la posición del telégrafo en función de las variables anteriormente descritas, se designan colores (Rojo: `Reparación Urgente`, Verde: `Tomar Precaución`, Azul: `Operación Normal`), para representar cada una de las etiquetas en el siguiente gráfico:
+Objeto observar de mejor manera la real incidencia de la posición del telégrafo en función de las variables anteriormente descritas, se designan colores (**Rojo**: `Reparación Urgente`, **Verde**: `Tomar Precaución`, **Azul**: `Operación Normal`), para representar cada una de las etiquetas en el siguiente gráfico:
 
-<img src="texto/Fig 9.png" align="center" width = "650px"/>
+<img src="texto/Fig 9.png" align="center" width = "700px"/>
  
 Figura Nº 9: Comparación de Variables en función del telégrafo.
 
@@ -137,21 +137,21 @@ De igual manera, se realizó una matriz de correlación para determinar el nivel
  
 Figura Nº 10: Matriz de correlación de las 16 variables.
 
-Como se observa en la matriz de correlación, los parámetros de presión y temperatura de entrada (Inlet Air Temperature `T1`, Inlet Air Pressure `P1`) son siempre 1 Bar y 15 ºC (simulación), por lo cual no tienen un nivel de significancia para la resolución del problema y pueden ser descartados de la simulación.
+Como se observa en la matriz de correlación, los parámetros de presión y temperatura de entrada (GT Compressor Inlet Air Temperature `T1`, GT Compressor Inlet Air Pressure `P1`) son siempre 1 Bar y 15 ºC (simulación), por lo cual no tienen un nivel de significancia para la resolución del problema y pueden ser descartados de la simulación.
 Realizado el análisis preliminar, se efectúa una partición de la totalidad de los datos en _2 grandes grupos_. El primero de ellos (**Training Set**) correspondiente al 80% para efectuar el entrenamiento de la base de datos y el 20% restante (**Test Set**), se utilizará como variable de comprobación del algoritmo seleccionado como modelo de predicción, quedando en los siguientes resultados:
 
   
 |    | Trainning Set (80%)                  |  Cantidad |   Total  | 
 | ---| ------------------------------------ |---------- | -------- |
-| 1  | `Operación Normal`                    |   3997    | 
-| 2  | `Tomar Precaución`                     |   3682    |   9547   |
-| 3  | `Reparación Urgente`                   |   1868    | 
+| 1  | `Operación Normal`                   |   3997    | 
+| 2  | `Tomar Precaución`                   |   3682    |   9547   |
+| 3  | `Reparación Urgente`                 |   1868    | 
 
 |    | Test Set (20%)                       |  Cantidad |   Total  |
 | ---| ------------------------------------ |---------- | -------- |
-| 1  | `Operación Normal`                    |   1052    |  
-| 2  | `Tomar Precaución`                     |   908     |   2387   |
-| 3  | `Reparación Urgente`                   |   427     |
+| 1  | `Operación Normal`                   |   1052    |  
+| 2  | `Tomar Precaución`                   |   908     |   2387   |
+| 3  | `Reparación Urgente`                 |   427     |
 |    | Total                                |  11934    |  11934   |
   
 Figura Nº 11: Resumen de cantidad de etiquetas clasificadas.
@@ -159,26 +159,26 @@ Figura Nº 11: Resumen de cantidad de etiquetas clasificadas.
 Definido lo anterior y establecidos los grupos aleatorios, se realizó la simulación del grupo de entrenamiento (**Training Set**) utilizando las 16 variables continuas,  considerando como respuesta la variable discreta equivalente a la etiqueta de clasificación (`Operación Normal`, `Tomar Precaución`, `Reparación Urgente`), de acuerdo al siguiente resultado:
 
 #### K-Nearest Neighbor (KNN): 
-Se utilizó un modelo de KNN Weighted obteniendo un porcentaje de 94,8% de eficiencia, con la siguiente matriz de confusión:
+Se utilizó un modelo de KNN Weighted obteniendo un porcentaje de **94,8% de eficiencia**, con la siguiente matriz de confusión:
 
 <img src="texto/Fig 12.png" align="center" width = "400px"/>
  
 Figura 12: Matriz de Confusión KNN Weighted.
 
 A partir de los datos expuestos y considerando los grados de respuesta y confiabilidad de los modelos (_se generó una serie de modelos, dentro de los cuales, se seleccionó K-NN objeto no extender el escrito_), se decidió elegir como algoritmo de predicción el KNN Weighted para crear la BlackBox. 
-Efectuado lo anterior se realizó lo siguiente: en primer lugar se tiene el detalle del 20% que no se utilizó para crear el algoritmo (**Test Set**), equivalente a las etiquetas de la figura 15. En segundo lugar, utilizando la BlackBox generada por el algoritmo a través de Matlab, se aplicó una función de predicción a esta base de datos (**Test Set**) para crear una nueva base de datos llamada Trained Set (detallada en la figura 13). Cabe destacar que esto se realizó para verificar la efectividad del algoritmo utilizando la base de datos desconocida para el modelo que representaría la entrada de nuevos datos derivados de la operación de la turbina a gas para luego, ser comparada con una nueva base de datos (Trained Set) obtenida tras aplicar esta función como datos entrenados, obteniendo los siguientes resultados:
+Efectuado lo anterior se realizó lo siguiente: en primer lugar se tiene el detalle del 20% que no se utilizó para crear el algoritmo (**Test Set**), equivalente a las etiquetas de la figura 15. En segundo lugar, utilizando la BlackBox generada por el algoritmo a través de Matlab, se aplicó una función de predicción a esta base de datos (**Test Set**) para crear una nueva base de datos llamada Trained Set (detallada en la figura 13). Cabe destacar que esto se realizó para verificar la efectividad del algoritmo utilizando la base de datos desconocida para el modelo que representaría la entrada de nuevos datos derivados de la operación de la turbina a gas para luego, ser comparada con una nueva base de datos (**Trained Set**) obtenida tras aplicar esta función como datos entrenados, obteniendo los siguientes resultados:
 
 
 | Nº | Etiqueta                             |  Cantidad Test Set | Cantidad Trainning Set | Eficacia |
 | ---| ------------------------------------ |------------------- | ---------------------- | -------- |
-| 1  | `Operación Normal`                     |   1052             | 1053                   |99,905%   |
-| 2  | `Tomar Precaución`                     |   908              | 905                    |99,668%   |
-| 3  | `Reparación Urgente`                   |   427              | 429                    |99,533%   | 
+| 1  | `Operación Normal`                   |   1052             | 1053                   |99,905%   |
+| 2  | `Tomar Precaución`                   |   908              | 905                    |99,668%   |
+| 3  | `Reparación Urgente`                 |   427              | 429                    |99,533%   | 
 |    | Total                                |  2387              | 2387                   |99,702%   |
   
 Figura 13: Resumen de resultados tras aplicar el modelo.
 
-A partir de los resultados expuestos en la figura 15, se puede señalar que si se implementa esta herramienta de predicción a la turbina, al ingresar nueva data al sistema a través de sus sensores de operación, existe un 99,668% de que el sistema de monitoreo encienda una alerta (Tomar Precaución), cuando existan condiciones que disminuyan el nivel de confiabilidad o que demanden tomar precaución del equipo, permitiendo al usuario tomar medidas paleativas para aumentar la eficiencia o prevenir una falla mayor.
+A partir de los resultados expuestos en la figura 15, se puede señalar que si se implementa esta herramienta de predicción a la turbina, al ingresar nueva data al sistema a través de sus sensores de operación, existe un **99,668%** de que el sistema de monitoreo encienda una alerta (`Tomar Precaución), cuando existan condiciones que disminuyan el nivel de confiabilidad o que demanden tomar precaución del equipo, permitiendo al usuario tomar medidas paleativas para aumentar la eficiencia o prevenir una falla mayor.
 Cabe destacar que el algoritmo aprende de la experiencia, por lo cual, el nivel de eficiencia en su predicción irá en aumento a medida que se ingrese más información al sistema (operando el equipo).
 
 ## Conclusiones y comentarios finales:
