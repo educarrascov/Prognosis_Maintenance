@@ -126,14 +126,14 @@ Figura Nº 8: Resumen de cantidad de etiquetas clasificadas.
 
 Objeto observar de mejor manera la real incidencia de la posición del telégrafo en función de las variables anteriormente descritas, se designan colores (**Rojo**: `Reparación Urgente`, **Verde**: `Tomar Precaución`, **Azul**: `Operación Normal`), para representar cada una de las etiquetas en el siguiente gráfico:
 
-<img src="texto/Fig 9.png" align="center" width = "700px"/>
+<img src="texto/Fig 9.png" align="center" width = "800px"/>
  
 Figura Nº 9: Comparación de Variables en función del telégrafo.
 
 De acuerdo con lo anterior, podemos determinar que los parámetros de temperatura de salida de la turbina (HP Turbine Exit Temperature, `T48`) y temperatura de salida del compresor (GT Compressor Outlet Air Temperature, `T2`), tienen mayor incidencia en la pérdida de eficiencia.
 De igual manera, se realizó una matriz de correlación para determinar el nivel de relación de cada variable y de cuales variables no tenían mayor incidencia en la resolución del problema.
 
-<img src="texto/Fig 10.png" align="center" width = "650px"/>
+<img src="texto/Fig 10.png" align="center" width = "800px"/>
  
 Figura Nº 10: Matriz de correlación de las 16 variables.
 
