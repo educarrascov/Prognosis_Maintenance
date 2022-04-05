@@ -6,7 +6,7 @@
 
 Enlace a la publicación del documento en [Revista de Marina, Año CXXXV, Volumen 137, Número 974.](https://revistamarina.cl/es/articulo/data-science-herramientas-de-machine-learning-para-implementar-mantenimiento-predictivo-en-una-planta-propulsora) 
 
-Enlace al .pdf de la [Publicación.](https://github.com/educarrascov/Prognosis_Maintenance/blob/main/PDF/2.%20Data%20Science%2C%20Mantenimiento%20predictivo.pdf)  
+Enlace al [.pdf de la Publicación.](https://github.com/educarrascov/Prognosis_Maintenance/blob/main/PDF/2.%20Data%20Science%2C%20Mantenimiento%20predictivo.pdf)  
 
 _________________________________________
   
